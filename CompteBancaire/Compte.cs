@@ -14,9 +14,9 @@ namespace CompteBancaire
     // Le prénom et le nom de famille doivent être votre nom dans le code.
     {
         public int solde;
-        string prenom = "Daphné";
-        string nomDeFamille = "Croville";
-        string typeCompte = "Courant";
+        public string prenom = "Daphné";
+        public string nom = "Croville";
+        public string typeCompte;
     }
 
 

@@ -10,5 +10,13 @@ namespace CompteBancaire
     // La classe Cheque doit avoir un constructeur qui attribue un solde et un type de compte.
     // Définissez le solde initial à 2 000 €.
     {
+        public Cheque(int solde, string typeCompte)
+        {
+            TypeCompte = typeCompte;
+            Solde = solde;
+        }
+
+        public string TypeCompte { get; set; }
+        public int Solde { get; set; }
     }
 }

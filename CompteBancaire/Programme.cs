@@ -15,8 +15,8 @@ namespace CompteBancaire
         {
             // instancier les objets compte, cheque et epargne
             Compte compte = new Compte(); // Création de notre client unique
-            Cheque cheque = new Cheque(); // Compte courant  
-            Epargne epargne = new Epargne(); // Compte épargne
+            Cheque cheque = new Cheque(2000, "Courant"); // initialiser le compte courant  
+            Epargne epargne = new Epargne(10000, "Epargne"); // initaliser le compte épargne
 
             Console.WriteLine("Bonjour, tapez sur la touche Entrée pour afficher le Menu");
 
@@ -34,7 +34,37 @@ namespace CompteBancaire
             
             string? saisie = Console.ReadLine();
 
-
+            switch (saisie)
+            {
+                case "I":
+                    // Voir les informations sur le titulaire du compte;
+                    Console.WriteLine("Titulaire du compte : " + compte.prenom + " " + compte.nom);
+                    break;
+                case "CS":
+                    // Compte courant - Consulter le solde;
+                    break;
+                case "CD":
+                    // Compte courant - Déposer des fonds;
+                    break;
+                case "CR":
+                    // Compte courant - Retirer des fonds;
+                    break;
+                case "ES":
+                    // Compte épargne - Consulter le solde;
+                    break;
+                case "ED":
+                    // Compte épargne - Déposer des fonds;
+                    break;
+                case "ER":
+                    // Compte épargne - Retirer des fonds;
+                    break;
+                case "X":
+                    // quitter;
+                    break;
+                default: // L'utilisateur a entré autre chose
+                    Console.WriteLine("Merci de sélectionner une option parmi : I, CS, CD, CR, ES, ED, ER ou X");
+                    break;
+            }
         }
     }
 }
