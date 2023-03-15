@@ -31,6 +31,7 @@ namespace CompteBancaire
             Console.WriteLine("[ED] Compte épargne - Déposer des fonds");
             Console.WriteLine("[ER] Compte épargne - Retirer des fonds");
             Console.WriteLine("[X] Quitter");
+
             
             string? saisie = Console.ReadLine();
 
