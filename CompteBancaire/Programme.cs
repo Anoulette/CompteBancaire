@@ -55,24 +55,49 @@ namespace CompteBancaire
                         break;
                     case "CS":
                         // Compte courant - Consulter le solde;
+                        Console.WriteLine("Solde du compte courant : " + cheque.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "CD":
                         // Compte courant - Déposer des fonds;
                         Console.WriteLine("Quel montant souhaitez-vous déposer ?");
-                        string? montantADéposer = Console.ReadLine();
-                        Console.WriteLine("Vous avez déposé : " + montantADéposer + " euros.");
+                        int.TryParse(Console.ReadLine(), out var montantADeposer);
+                        Console.WriteLine("Vous avez déposé : " + montantADeposer + " euros.");
+                        cheque.Solde += montantADeposer;
+                        Console.WriteLine("Solde actuel :" + cheque.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "CR":
                         // Compte courant - Retirer des fonds;
+                        Console.WriteLine("Quel montant souhaitez-vous retirer ?");
+                        int.TryParse(Console.ReadLine(), out var montantARetirer);
+                        Console.WriteLine("Vous avez retiré : " + montantARetirer + " euros.");
+                        cheque.Solde -= montantARetirer;
+                        Console.WriteLine("Solde actuel :" + cheque.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "ES":
                         // Compte épargne - Consulter le solde;
+                        Console.WriteLine("Solde du compte épargne : " + epargne.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "ED":
                         // Compte épargne - Déposer des fonds;
+                        Console.WriteLine("Quel montant souhaitez-vous déposer ?");
+                        int.TryParse(Console.ReadLine(), out montantADeposer);
+                        Console.WriteLine("Vous avez déposé : " + montantADeposer + " euros.");
+                        epargne.Solde += montantADeposer;
+                        Console.WriteLine("Solde actuel :" + epargne.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "ER":
                         // Compte épargne - Retirer des fonds;
+                        Console.WriteLine("Quel montant souhaitez-vous retirer ?");
+                        int.TryParse(Console.ReadLine(), out montantARetirer);
+                        Console.WriteLine("Vous avez retiré : " + montantARetirer + " euros.");
+                        epargne.Solde -= montantARetirer;
+                        Console.WriteLine("Solde actuel :" + epargne.Solde + " euros.");
+                        Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "X":
                         // quitter;
@@ -82,7 +107,6 @@ namespace CompteBancaire
                         AfficherMenu();
                         break;
                 }
-                Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                 Console.ReadLine();
             }
             // fin boucle
