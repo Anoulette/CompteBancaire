@@ -64,7 +64,7 @@ namespace CompteBancaire
                         int.TryParse(Console.ReadLine(), out var montantADeposer);
                         Console.WriteLine("Vous avez déposé : " + montantADeposer + " euros.");
                         cheque.Solde += montantADeposer;
-                        Console.WriteLine("Solde actuel :" + cheque.Solde + " euros.");
+                        Console.WriteLine("Transaction : " + montantADeposer + " euros le " + DateTime.Now.ToString("dd/MM/yyyy à HH:mm") + " - Solde actuel : " + cheque.Solde + " euros.");
                         Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "CR":
@@ -73,7 +73,7 @@ namespace CompteBancaire
                         int.TryParse(Console.ReadLine(), out var montantARetirer);
                         Console.WriteLine("Vous avez retiré : " + montantARetirer + " euros.");
                         cheque.Solde -= montantARetirer;
-                        Console.WriteLine("Solde actuel :" + cheque.Solde + " euros.");
+                        Console.WriteLine("Transaction : " + montantARetirer + " euros le " + DateTime.Now.ToString("dd/MM/yyyy à HH:mm") + " - Solde actuel : " + cheque.Solde + " euros.");
                         Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "ES":
@@ -87,7 +87,7 @@ namespace CompteBancaire
                         int.TryParse(Console.ReadLine(), out montantADeposer);
                         Console.WriteLine("Vous avez déposé : " + montantADeposer + " euros.");
                         epargne.Solde += montantADeposer;
-                        Console.WriteLine("Solde actuel :" + epargne.Solde + " euros.");
+                        Console.WriteLine("Transaction : " + montantADeposer + " euros le " + DateTime.Now.ToString("dd/MM/yyyy à HH:mm") + " - Solde actuel : " + epargne.Solde + " euros.");
                         Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "ER":
@@ -96,11 +96,12 @@ namespace CompteBancaire
                         int.TryParse(Console.ReadLine(), out montantARetirer);
                         Console.WriteLine("Vous avez retiré : " + montantARetirer + " euros.");
                         epargne.Solde -= montantARetirer;
-                        Console.WriteLine("Solde actuel :" + epargne.Solde + " euros.");
+                        Console.WriteLine("Transaction : " + montantARetirer + " euros le " + DateTime.Now.ToString("dd/MM/yyyy à HH:mm") + " - Solde actuel : " + epargne.Solde + " euros.");
                         Console.WriteLine("Appuyez sur Entrée pour afficher le Menu");
                         break;
                     case "X":
                         // quitter;
+                        // pour quitter le programme, créez 2 fichiers texte contenant toutes les transactions du compte courant et du compte épargne
                         break;
                     default: // L'utilisateur a entré autre chose
                         Console.WriteLine("Merci de sélectionner une option parmi : I, CS, CD, CR, ES, ED, ER ou X");
