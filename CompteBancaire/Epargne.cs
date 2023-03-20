@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace CompteBancaire
 {
-    class Epargne
+    class Epargne : Compte
     // La classe Epargne doit avoir un constructeur qui affecte un solde et un type de compte.
     // Fixez le solde initial à 10 000 €.
     {
-        public Epargne(int solde, string typeCompte)
+        public Epargne(int solde, string type)
+            : base(solde, type)
         {
-            TypeCompte = typeCompte;
-            Solde = solde;
         }
-
-        public string TypeCompte { get; set; }
-        public int Solde { get; set; }
     }
 }

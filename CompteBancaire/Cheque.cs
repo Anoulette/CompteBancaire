@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace CompteBancaire
 {
-    class Cheque
+    class Cheque : Compte
     // La classe Cheque doit avoir un constructeur qui attribue un solde et un type de compte.
     // Définissez le solde initial à 2 000 €.
     {
-        public Cheque(int solde, string typeCompte)
+        public Cheque(int solde, string type)
+            : base(solde, type)
         {
-            TypeCompte = typeCompte;
-            Solde = solde;
         }
-
-        public string TypeCompte { get; set; }
-        public int Solde { get; set; }
     }
 }
